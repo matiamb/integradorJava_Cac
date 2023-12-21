@@ -9,8 +9,11 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 import logica.Controladora;
 import logica.Orador;
@@ -50,7 +53,12 @@ public class SvOrador extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        List<Orador> listaoradores = new ArrayList<>();
+        listaoradores = control.traerOradores();
+        
+        HttpSession misesion = request.getSession();
+        misesion.setAttribute("listaoradores", listaoradores);
+        response.sendRedirect("oradores.jsp");
     }
 
     /**
@@ -77,6 +85,7 @@ public class SvOrador extends HttpServlet {
         ora.setFecha_alta(Calendar.getInstance(Locale.JAPAN));
         
         control.crearOrador(ora);
+        response.sendRedirect("index.jsp");
     }
 
     /**
