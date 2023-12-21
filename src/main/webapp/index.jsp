@@ -18,7 +18,9 @@
             </a>
             <div class="d-flex justify-content-end gap-3">
                 <a class="nav-link text-light" href="#">La Conferencia</a>
-                <a class="nav-link text-secondary" href="#">Los Oradores</a>
+                <form action="SvOrador" method="GET">
+                    <button type="submit" class="btn btn-sm btn-outline-secondary text-light">Los Oradores</button>
+                </form>
                 <a class="nav-link text-secondary" href="#">El Lugar y la fecha</a>
                 <a class="nav-link text-secondary" href="#">Conviertete en orador</a>
                 <a class="nav-link text-success" href="tickets.jsp">Comprar tickets</a>
