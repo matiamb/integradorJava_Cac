@@ -1,0 +1,36 @@
+.navbar {
+    background-color: #404040;
+}
+
+.fondo1 {
+    height: 600px;
+}
+
+.texto1 {
+    margin-right: 75px;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px black;
+}
+
+.highlight {
+    font-size: 10px;
+}
+
+.textoCard {
+    font-size: 13px;
+}
+
+.texto4 {
+    background-color: #404040;
+}
+
+.footer {
+    display: flex;
+    background-color: #0047b3;
+    justify-content: center;
+}
+
+.totalcontainer {
+    background-color: #29BBFF;
+}
